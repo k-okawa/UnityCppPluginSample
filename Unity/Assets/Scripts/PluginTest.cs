@@ -2,9 +2,17 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 
 public class PluginTest {
-    [DllImport ("osx")]
+#if !UNITY_EDITOR && UNITY_IOS 
+    [DllImport ("__Internal")]
+#else
+    [DllImport ("SamplePlugin")]
+#endif
     public static extern int test();
 
-    [DllImport("osx")]
+#if !UNITY_EDITOR && UNITY_IOS
+    [DllImport ("__Internal")]
+#else
+    [DllImport ("SamplePlugin")]
+#endif
     public static extern string helloWorld();
 }
