@@ -1,13 +1,14 @@
 #ifndef SOURCE_LIBRARY_HPP
 #define SOURCE_LIBRARY_HPP
-#define _CRT_SECURE_NO_WARNINGS
 
 #ifdef _WINDOWS
     #define _CRT_SECURE_NO_WARNINGS
     #define DLL_EXPORT __declspec(dllexport)
-#elif
+#endif
+
+#ifndef _WINDOWS
     #define DLL_EXPORT
-#endif // _WINDOWS
+#endif
 
 
 extern "C"  {
