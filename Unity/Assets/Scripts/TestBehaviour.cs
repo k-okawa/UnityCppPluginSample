@@ -13,9 +13,9 @@ public class TestBehaviour : MonoBehaviour
         
         Debug.Log("StartCall");
         
-        int result = PluginTest.test();
-        Debug.Log($"PluginResult:{result}");
-        _testText.text = $"TestResult:{result}";
+        int result = PluginTest.sum(1, 2);
+        Debug.Log($"SumResult:1+2={result}");
+        _testText.text = $"SumResult:1+2={result}";
 
         string helloWorld = PluginTest.helloWorld();
         Debug.Log(helloWorld);

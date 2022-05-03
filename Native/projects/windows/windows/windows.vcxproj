@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="library.h" />
+    <ClCompile Include="..\..\..\src\library.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="library.cpp" />
+    <ClInclude Include="..\..\..\src\library.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

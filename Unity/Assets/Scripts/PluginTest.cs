@@ -1,18 +1,17 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-public class PluginTest {
+public class PluginTest
+{
 #if !UNITY_EDITOR && UNITY_IOS
-    [DllImport ("__Internal")]
+    private const string PLUGIN_NAME = "__Internal";
 #else
-    [DllImport ("sampleplugin")]
+    private const string PLUGIN_NAME = "sampleplugin";
 #endif
-    public static extern int test();
+    
+    [DllImport(PLUGIN_NAME)]
+    public static extern int sum(int a, int b);
 
-#if !UNITY_EDITOR && UNITY_IOS
-    [DllImport ("__Internal")]
-#else
-    [DllImport ("sampleplugin")]
-#endif
+    [DllImport(PLUGIN_NAME)]
     public static extern string helloWorld();
 }
